@@ -1,2 +1,3 @@
-#testing
-#test
+resource "null_resource" "cluster" {
+ 
+}
