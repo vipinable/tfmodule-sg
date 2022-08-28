@@ -16,8 +16,9 @@ resource "aws_imagebuilder_component" "this" {
   name     = "example"
   platform = "Linux"
   version  = "1.0.0"
+  
 }
 
-resource "null_resource" "test_resource" {
+resource "null_resource" "resource1" {
   count = 2
 }
