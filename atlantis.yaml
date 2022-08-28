@@ -27,7 +27,7 @@ workflows:
       - env:
           name: ENVNAME
           value: "test"
-      - run: export APPNAME=tfmodule-tester;export ENVNAME=test;./tfremote.sh
+      - run: sh tfremote.sh
       - init
       - plan
 allowed_regexp_prefixes:
