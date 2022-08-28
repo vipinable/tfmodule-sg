@@ -19,6 +19,6 @@ resource "aws_imagebuilder_component" "this" {
   
 }
 
-resource "null_resource" "test_resource" {
+resource "null_resource" "resource1" {
 
 }
