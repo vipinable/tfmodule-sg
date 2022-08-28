@@ -27,7 +27,7 @@ workflows:
       - env:
           name: ENVNAME
           value: "test"
-      - run: ./tfremote.sh
+      - run: sh tfremote.sh
       - init
       - plan:
           extra_args: ["-lock", "false"]
