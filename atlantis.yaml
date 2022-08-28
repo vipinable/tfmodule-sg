@@ -30,6 +30,7 @@ workflows:
       - run: sh tfremote.sh
       - init
       - plan
+    policy_check:
 allowed_regexp_prefixes:
 - dev/
 - staging/
