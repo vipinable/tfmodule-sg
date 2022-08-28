@@ -21,7 +21,13 @@ workflows:
       - env:
           name: AWS_DEFAULT_REGION
           value: "us-east-1"
-      - run: export APPNAME=tfmodule-tester;export ENVNAME=test;./tfremote.sh
+      - env:
+          name: APPNAME
+          value: "tfmodule-tester"
+      - env:
+          name: ENVNAME
+          value: "test"
+      - run: ./tfremote.sh
       - init
       - plan:
           extra_args: ["-lock", "false"]
