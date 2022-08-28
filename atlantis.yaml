@@ -21,12 +21,15 @@ workflows:
       - env:
           name: AWS_DEFAULT_REGION
           value: "us-east-1"
+      - env:
+          name: APPNAME
+          value: "tfmodule-tester"
+      - env:
+          name: ENVNAME
+          value: "test"
       - run: export APPNAME=tfmodule-tester;export ENVNAME=test;./tfremote.sh
       - init
       - plan
-    policy_check:
-      steps:
-        - policy_check
 allowed_regexp_prefixes:
 - dev/
 - staging/
