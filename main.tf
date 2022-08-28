@@ -20,5 +20,5 @@ resource "aws_imagebuilder_component" "this" {
 }
 
 resource "null_resource" "resource1" {
-
+  count = 2
 }
