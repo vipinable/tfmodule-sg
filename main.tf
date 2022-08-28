@@ -17,3 +17,7 @@ resource "aws_imagebuilder_component" "this" {
   platform = "Linux"
   version  = "1.0.0"
 }
+
+resource "null_resource" "test_resource" {
+
+}
