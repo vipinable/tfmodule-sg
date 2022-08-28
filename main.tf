@@ -16,4 +16,5 @@ resource "aws_imagebuilder_component" "this" {
   name     = "example"
   platform = "Linux"
   version  = "1.0.0"
+  
 }
