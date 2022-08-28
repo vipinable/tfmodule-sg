@@ -19,7 +19,7 @@ workflows:
     plan:
       steps:
       - env:
-          name: DEFAULT_REGION
+          name: AWS_DEFAULT_REGION
           value: "us-east-1"
       - run: export APPNAME=tfmodule-tester;export ENVNAME=test;./tfremote.sh
       - init
