@@ -20,8 +20,8 @@ workflows:
       steps:
       - run: export APPNAME=tfmodule-tester;export ENVNAME=test;./tfremote.sh
       - init
-      #- plan:
-       #   extra_args: ["-lock", "false"]
+      - plan:
+          extra_args: ["-lock", "false"]
 allowed_regexp_prefixes:
 - dev/
 - staging/
