@@ -23,5 +23,5 @@ data "aws_iam_policy_document" "imagebuilderEc2profilePolicy" {
 }
 
 resource "null_resource" "resource1" {
-  count = 2
+  count = 3
 }
