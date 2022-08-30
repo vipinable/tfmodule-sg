@@ -29,6 +29,9 @@ workflows:
           value: "test"
       - run: sh tfremote.sh
       - init
+      - run: terraform plan --out tfplan.binary
+      - run: terraform show -json tfplan.binary > tfplan.json
+      - run: curl -X GET http://arvizhome-1.ddns.net:8181/v1/data/terraform/analysis/authz -d @tfplan.json
       - plan
 allowed_regexp_prefixes:
 - dev/
