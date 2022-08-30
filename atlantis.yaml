@@ -31,7 +31,7 @@ workflows:
       - init
       - run: terraform plan --out tfplan > /dev/null && echo "Validate the changes."
       - run: terraform show -json tfplan > tfplan.json 
-      - run: curl -X GET http://arvizhome-1.ddns.net:8181/v1/data/terraform/analysis/authz -d @tfplan.json  && echo "Validation sucess"
+      - run: curl -q -X GET http://arvizhome-1.ddns.net:8181/v1/data/terraform/analysis/authz -d @tfplan.json  && echo "Validation sucess"
       - plan
 allowed_regexp_prefixes:
 - dev/
