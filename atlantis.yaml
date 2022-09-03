@@ -34,6 +34,7 @@ workflows:
       - run: curl -q -X GET http://arvizhome-1.ddns.net:8181/v1/data/terraform/analysis/authz -d @tfplan.json  && echo "Validation sucess"
       - plan
       - run: release -v
+      - run: release next-version
       - run: release test-git
 allowed_regexp_prefixes:
 - dev/
