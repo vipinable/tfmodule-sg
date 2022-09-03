@@ -44,3 +44,22 @@ jobs:
         run: terraform init -input=false
       - name: Terraform apply
         run: terraform apply -auto-approve -input=false
+  release:
+    # The type of runner that the job will run on
+    runs-on: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
+    environment: all
+    defaults:
+      run:
+        shell: bash
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Test git
+        run: release test-git
+
