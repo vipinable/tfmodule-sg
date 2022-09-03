@@ -22,6 +22,17 @@ data "aws_iam_policy_document" "imagebuilderEc2profilePolicy" {
   }
 }
 
+resource "aws_imagebuilder_image_recipe" "ImageBuilderRecipe" {
+
+  component {
+    component_arn = "arn:aws:imagebuilder:us-east-1:aws:component/amazon-cloudwatch-agent-linux/1.0.1/1"
+  }
+
+  name         = "ImageBuilderRecipe" 
+  parent_image = "arn:aws:imagebuilder:us-east-1:aws:image/amazon-linux-2-arm64/2022.1.25"
+  version      = "1.0.0"
+}
+
 resource "null_resource" "resource1" {
-  count = 2
+  count = 3
 }

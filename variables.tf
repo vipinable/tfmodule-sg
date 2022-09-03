@@ -1,5 +1,5 @@
 variable "appname" {
-  default = "tfmodule-sg"
+  default = "tfmodule-tester"
   type    = string
 }
 
